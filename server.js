@@ -43,24 +43,6 @@ app.post('/actions', (req, res) => {
     res.send(newClient)
 })
 
-app.get('/data/upload', (req, res) => {
-    const data = require('./data.json')
-    data.forEach(d => {
-        let clients = new Client({
-            name: d.name.split(" ")[0],
-            surname: d.name.split(" ")[1],
-            email: d.email,
-            firstContact: d.firstContact,
-            emailType: d.emailType,
-            sold: d.sold,
-            owner: d.owner,
-            country: d.country
-        })
-        clients.save()
-    })
-    res.send("data saved")
-})
-
 app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
