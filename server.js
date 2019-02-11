@@ -34,7 +34,7 @@ app.get('/getData', (req, res) => {
             owner: d.owner,
             country: d.country
         })
-
+        console.log(clients)
         clients.save()
     })
 
