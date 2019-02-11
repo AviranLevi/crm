@@ -58,7 +58,7 @@ app.get('/getData', (req, res) => {
         })
         clients.save()
     })
-    res.send("data save")
+    res.send("data saved")
 })
 
 app.get('*', function (req, res) {
