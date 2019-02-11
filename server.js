@@ -13,15 +13,9 @@ mongoose.connect(
     { useNewUrlParser: true }
 ).then(() => console.log("DB Connected"))
 
-
 app.use(express.static(path.join(__dirname, 'build')));
 
-
 app.get('/clients', (req, res) => {
-    Client.find({}, function (err, result) { res.send(result) })
-});
-
-app.get('/getData', (req, res) => {
     const data = require('./data.json')
 
     data.forEach(d => {
@@ -38,8 +32,8 @@ app.get('/getData', (req, res) => {
         clients.save()
     })
 
-    res.end()
-})
+    Client.find({}, function (err, result) { res.send(result) })
+});
 
 app.put('/clients/:id', function (req, res) {
     let dataTochange = req.body
