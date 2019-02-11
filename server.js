@@ -20,7 +20,7 @@ app.get('/clients', (req, res) => {
     Client.find({}, function (err, result) { res.send(result) })
 });
 
-app.get('/get-data', (req, res) => {
+app.get('/getData', (req, res) => {
     const data = require('./data.json')
 
     data.forEach(d => {
