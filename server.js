@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+const path = require('path')
 const app = express();
 const Client = require('./server/models/Clients')
 
@@ -34,7 +35,6 @@ app.get('/getData', (req, res) => {
             owner: d.owner,
             country: d.country
         })
-        console.log(clients)
         clients.save()
     })
 
