@@ -43,7 +43,7 @@ app.post('/actions', (req, res) => {
     res.send(newClient)
 })
 
-app.get('/getData', (req, res) => {
+app.get('/data/upload', (req, res) => {
     const data = require('./data.json')
     data.forEach(d => {
         let clients = new Client({
