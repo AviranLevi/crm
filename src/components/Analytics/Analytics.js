@@ -16,7 +16,7 @@ class Analytics extends Component {
     }
 
     async getData() {
-        return axios.get("http://localhost:3009/clients")
+        return axios.get("/clients")
     }
 
     async componentDidMount() {

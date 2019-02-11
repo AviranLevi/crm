@@ -16,7 +16,7 @@ class Actions extends Component {
     }
 
     async getData() {
-        return axios.get("http://localhost:3009/clients")
+        return axios.get("/clients")
     }
 
     async componentDidMount() {
@@ -25,7 +25,7 @@ class Actions extends Component {
     }
 
     async getNewClient(client) {
-        return axios.post("http://localhost:3009/actions", client)
+        return axios.post("/actions", client)
     }
 
     addClient = async () => {
